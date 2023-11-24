@@ -23,6 +23,23 @@ userRouter.get('/:id', async (req, res) => {
   res.json(user)
 })
 
+userRouter.get('/', async (req, res)=> {
+  const {password, admin} = req.body
+  if(admin && password === 'hardcoded_password'){
+    const users = usersService.getUsers(true)
+    res.json(users)
+  }
+  /* const user = usersService.findOne('admin', true)
+  const corrPass = user === false
+    ? false
+    : await bcrypt.compare(password, user.password)
+
+  if(admin && corrPass) {
+    const users = usersService.getUsers(true)
+    res.json(users)
+  } */
+}) 
+
 userRouter.post('/', async (req, res) => {
   const {username, password, safe} = req.body
   const exists = usersService.findOne(username, true)

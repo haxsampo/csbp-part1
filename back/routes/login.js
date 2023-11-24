@@ -11,7 +11,6 @@ const th = require('../utils/token_handles')
 loginRouter.post('/', async (req, res)=> {
   //SAFE LOGIN
   const { username, password } = req.body
-  //console.log("username pass",username, password)
   const user = usersService.findOne(username, true)
 
   if(!hf.isEmpty(req.user) && req.user.username != username) {

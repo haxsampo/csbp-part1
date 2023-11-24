@@ -2,6 +2,7 @@ const fs = require("fs")
 
 const usersPath = './data/users.json'
 const usersPathSafe = './data/users_safe.json'
+//const usersPathSafe = '../data/users_safe.json' testing
 
 const getUsers = (safe) => {
   if(safe) {

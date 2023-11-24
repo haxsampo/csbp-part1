@@ -1,6 +1,7 @@
-PUT http://localhost:3001/api/user/ HTTP/1.1
+GET http://localhost:3001/api/user/ HTTP/1.1
 content-type: application/json
 
 {
-    "admin":"hardcoded_password"
+    "password":"hardcoded_password",
+    "admin": true
 }
